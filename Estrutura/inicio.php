@@ -4,6 +4,7 @@ echo "ola mundo";
 
 //php7 outras tags de abertura foram descontinuadas
 //<% %>
+echo 'fazendo alterações';
 
 ?>
 php utiliza arquitetura cliente servidor
