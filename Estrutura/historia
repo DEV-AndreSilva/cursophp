@@ -16,13 +16,14 @@ php.ini
 IDE - Ambiente de desenvolvimento completo
 
 ------------------------------
+git init
 git add nome_arquivo (estage area)
-git add --all
-git commit -m ok
-git commit -m "criei meu repositorio"
+git add --all  (manda todos)
+git commit -m ok (nome é 1 palavra)
+git commit -m "criei meu repositorio" (nome é uma frase)
 
 
-git remote add origin (URL repositorio git)
+git remote add origin URL repositorio git (indicando o local para mandar os arquivos para o repositorio online - github)
 
-
-git pull origin master
+git pull origin master  (resolvendo os conflitos entre os arquivos)
+git push origin master (mandando os arquivos para o github)
