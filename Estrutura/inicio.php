@@ -1,11 +1,12 @@
 <?php
 
-echo "ola mundo";
-echo "ola mundo novamente"
+echo "ola mundo 456";
+echo "ola mundo novamente 456";
 
 //php7 outras tags de abertura foram descontinuadas
 //<% %>
 echo 'fazendo alterações';
+echo 'fazendo mais alterações';
 
 ?>
 php utiliza arquitetura cliente servidor

@@ -24,3 +24,5 @@ git commit -m "criei meu repositorio"
 
 git remote add origin (URL repositorio git)
 
+
+git pull origin master
