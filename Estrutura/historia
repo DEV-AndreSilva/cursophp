@@ -1,0 +1,26 @@
+criado em 1994 rasmus lerdof
+hoje quem faz as atualizações é a zend
+versão 4 lançada em 2000
+versão 5.3 em 2004
+versão 7 lançado em 2015
+----------------------------------------
+Apache - servidor web gratuito de código aberto
+
+O arquivo de configuração do apache 
+httpd.conf
+
+O arquivo de configuração do PHP
+php.ini
+
+-----------------------------
+IDE - Ambiente de desenvolvimento completo
+
+------------------------------
+git add nome_arquivo (estage area)
+git add --all
+git commit -m ok
+git commit -m "criei meu repositorio"
+
+
+git remote add origin (URL repositorio git)
+
