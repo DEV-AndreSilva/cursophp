@@ -1,7 +1,7 @@
 <?php
 
-echo "ola mundo";
-echo "ola mundo novamente"
+echo "ola mundo 123";
+echo "ola mundo novamente 123"
 
 //php7 outras tags de abertura foram descontinuadas
 //<% %>
