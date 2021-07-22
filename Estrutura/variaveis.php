@@ -7,11 +7,11 @@
  */
 $nome = "André";
 
-//Exibe  a varivael na tela
+//Exibe  a variavel na tela
 echo $nome;
 echo "<br>";
 
-//informações da varivel
+//informações da variavel
 var_dump($nome);
 
 //CamelCase
