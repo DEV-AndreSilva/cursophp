@@ -19,3 +19,5 @@
 
  teste();
  teste2($nome);
+
+ ?>

@@ -72,4 +72,5 @@ var_dump($arquivo);
 //Nulo
 $nulo=null;
 
+?>
 

@@ -15,3 +15,5 @@ $script=$_SERVER['SCRIPT_NAME'];
 
 echo $ip."<br>";
 echo $script;
+
+?>
