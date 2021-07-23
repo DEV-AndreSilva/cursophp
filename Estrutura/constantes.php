@@ -25,4 +25,3 @@ echo"<br>";
 
 echo DIRECTORY_SEPARATOR;
 
-$oi="oi";
