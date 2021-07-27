@@ -1,0 +1,10 @@
+É um estilo de programação
+
+Classe - Uma caixa onde são reunidos tópicos semelhantes sobre um assunto, conjunto de algo
+Atributos - Variaveis de uma classe, que possuem mais funções, encapsulamento(quem consegue vê-la/usa-la)
+Funções - São chamados de Métodos, também possuem encapsulamento
+
+Classe - é um conjunto de atributos e Métodos
+
+Objeto - É a instância de uma classe, representa um exemplar de uma classe
+Objeto - Uma variavel que representa uma clase
