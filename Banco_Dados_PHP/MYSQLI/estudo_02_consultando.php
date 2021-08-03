@@ -13,7 +13,7 @@ $result = $conn->query("select * from tb_usuarios order by deslogin");
 
 $data=array();
 
-//transforma cada resultado da consulta em um array e atribui a variavel $row
+//transforma cada resultado da consulta em um array e atribuindo a variavel $row
 while($row = $result->fetch_array(MYSQLI_ASSOC)) // ou fetch_assoc()
 {
     print_r($row);
