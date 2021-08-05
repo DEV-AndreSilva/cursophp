@@ -9,8 +9,9 @@ $password="987654";
 
 //passando os parametros
 $stmt->bindParam(":LOGIN",$login);
-$stmt->bindParam(":PASSWORD",$password);//executa o comando
+$stmt->bindParam(":PASSWORD",$password);
+//executa o comando
 $stmt->execute();
 
+echo "Inserido com sucesso";
 
-?>
