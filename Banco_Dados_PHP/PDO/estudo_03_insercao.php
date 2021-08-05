@@ -11,7 +11,7 @@ $password="987654";
 $stmt->bindParam(":LOGIN",$login);
 $stmt->bindParam(":PASSWORD",$password);
 
-
+$teste="teste";
 $stmt->execute();
 
 ?>
