@@ -69,7 +69,18 @@ class Usuario{
         }
 
     }
-
+    
+    /**
+     * Retorna uma lista com todos os Usuários
+     *
+     * @return array $sql
+     */
+    public static function getList()
+    {
+        $sql = new SQL();
+        $sql->select("select * from tb_usuarios order by deslogin");
+        return $sql;
+    }
     /**
      * Função chamada quando utilizado o Echo no objeto Usuario
      *
