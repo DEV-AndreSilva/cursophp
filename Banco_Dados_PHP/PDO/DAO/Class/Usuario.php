@@ -90,7 +90,7 @@ class Usuario{
     {
         $sql = new SQL();
         $result=$sql->select("select * from tb_usuarios order by deslogin");
-        return json_encode($result);
+        return json_encode($result,JSON_UNESCAPED_SLASHES);
     }
 
     /**
@@ -105,7 +105,7 @@ class Usuario{
         $result=$sql->select("Select * from tb_usuarios where deslogin LIKE :SEARCH",array(
             ':SEARCH'=>"%".$login."%"
         ));
-        return json_encode($result);
+        return json_encode($result,JSON_UNESCAPED_SLASHES);
     }
 
     /**
@@ -222,7 +222,7 @@ class Usuario{
             "deslogin"=>$this->getDeslogin(),
             "dessenha"=>$this->getDessenha(),
             "dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s")
-        ));
+        ),JSON_UNESCAPED_SLASHES);
     }
 
 }
