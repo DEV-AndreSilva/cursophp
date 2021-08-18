@@ -23,3 +23,8 @@ $usuario->login("Andre",987654);
 echo $usuario;
 
 
+//inserindo novo usuário
+$aluno = new Usuario("Julio Lopes","julio@email.com");
+$aluno->insert();
+echo $aluno;
+
