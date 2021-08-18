@@ -28,3 +28,8 @@ $aluno = new Usuario("Julio Lopes","julio@email.com");
 $aluno->insert();
 echo $aluno;
 
+
+//alterando usuário
+$usuario_alterar= new Usuario();
+$usuario_alterar->loadById(11);
+$usuario_alterar->update("Julio Pereia", "julio");

@@ -172,7 +172,7 @@ class Usuario{
         $this->setDessenha($password);
 
         $sql= new SQL();
-        $sql->query("Update tb_usuarios set deslogin = :LOGIN , dessenha= :PASSWORD where idusuario = :ID", array(
+        $sql->que("Update tb_usuarios set deslogin = :LOGIN , dessenha= :PASSWORD where idusuario = :ID",array(
             ":LOGIN"=>$this->getDeslogin(),
             ":PASSWORD"=>$this->getDessenha(),
             ":ID"=>$this->getIdusuario()
