@@ -1,16 +1,20 @@
 <?php
 
 class Usuario{
+
+    //atributos da classe Usuário
     private $idususario;
     private $deslogin;
     private $dessenha;
     private $dtcadastro;
 
+    //método acessor
     public function getIdusuario()
     {
         return $this->idususario;
     }
 
+    //método modificador
     public function setIdusuario($id)
     {
         $this->idususario=$id;
@@ -46,10 +50,9 @@ class Usuario{
     }
 
     /**
-     * Pesquisa de Cadastro por ID
+     * Método de pesquisa de Cadastro por ID
      *
      * @param integer $id
-     * @return void
      */
     public function loadById($id)
     {
@@ -71,18 +74,58 @@ class Usuario{
     }
     
     /**
-     * Retorna uma lista com todos os Usuários
+     * Método que retorna uma lista com todos os Usuários
      *
-     * @return array $sql
+     * @return string $result
      */
     public static function getList()
     {
         $sql = new SQL();
-        $sql->select("select * from tb_usuarios order by deslogin");
-        return $sql;
+        $result=$sql->select("select * from tb_usuarios order by deslogin");
+        return json_encode($result);
     }
+
     /**
-     * Função chamada quando utilizado o Echo no objeto Usuario
+     * Método de busca de Login por parametro
+     *
+     * @param string $login
+     * @return string $result
+     */
+    public static function search(string $login)
+    {
+        $sql= new SQL();
+        $result=$sql->select("Select * from tb_usuarios where deslogin LIKE :SEARCH",array(
+            ':SEARCH'=>"%".$login."%"
+        ));
+        return json_encode($result);
+    }
+
+    public function login($login, $password)
+    {
+        $sql= new SQL();
+
+        $result=$sql->select("select * from tb_usuarios where deslogin = :LOGIN and dessenha = :PASSWORD", array(
+            ":LOGIN"=>$login,
+            "PASSWORD"=>$password
+        ));
+
+        if(count($result)>0)
+        {
+            $row=$result[0];
+            $this->setIdusuario($row['idusuario']);
+            $this->setDeslogin($row['deslogin']);
+            $this->setDessenha($row['dessenha']);
+            $this->setDtcadastro(new DateTime($row['dtcadastro']));
+        }
+        else{
+            throw new Exception("Login e ou Senha invalidos !");
+        }
+
+    }
+
+
+    /**
+     * Método chamado quando utilizado o Echo no objeto Usuario
      *
      * @return string
      */
