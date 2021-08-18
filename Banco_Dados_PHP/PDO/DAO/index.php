@@ -32,4 +32,12 @@ echo $aluno;
 //alterando usuário
 $usuario_alterar= new Usuario();
 $usuario_alterar->loadById(11);
-$usuario_alterar->update("Julio Pereia", "julio");
+$usuario_alterar->update("Julio Pereira", "julio");
+echo $usuario_alterar;
+
+
+//Deletando um usuário
+$usuario_deletar = new Usuario("joao maicom","jão");
+$usuario_deletar->insert();
+$usuario_deletar->delete();
+echo $usuario_deletar;

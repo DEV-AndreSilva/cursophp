@@ -59,6 +59,7 @@ class Usuario{
     {
         $this->setDeslogin($login);
         $this->setDessenha($password);
+        $this->dtcadastro= new DateTime();
     }
 
     /**
@@ -166,6 +167,13 @@ class Usuario{
         }
     }
 
+    /**
+     * Método responsável por atualizar um registro no banco de dados
+     *
+     * @param string $login
+     * @param string $password
+     * @return void
+     */
     public function update($login, $password)
     {
         $this->setDeslogin($login);
@@ -177,6 +185,27 @@ class Usuario{
             ":PASSWORD"=>$this->getDessenha(),
             ":ID"=>$this->getIdusuario()
         ));
+
+    }
+
+    /**
+     * Método responsável por deletar um registro do banco de dados
+     *
+     * @return void
+     */
+    public function delete()
+    {
+        $sql = new SQL();
+        $sql->que("Delete From tb_usuarios where idusuario= :ID",array(
+            ":ID"=>$this->getIdusuario()
+        ));
+
+        echo $this;
+
+        $this->setIdusuario(0);
+        $this->setDeslogin("");
+        $this->setDessenha("");
+        $this->setDtcadastro(new DateTime());
 
     }
 
