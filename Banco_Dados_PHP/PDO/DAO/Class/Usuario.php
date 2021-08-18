@@ -50,6 +50,18 @@ class Usuario{
     }
 
     /**
+     * Método responsavel por atribuir parametros a criação de um novo usuário
+     *
+     * @param string $login
+     * @param string $password
+     */
+    public function __construct($login="", $password="")
+    {
+        $this->setDeslogin($login);
+        $this->setDessenha($password);
+    }
+
+    /**
      * Método de pesquisa de Cadastro por ID
      *
      * @param integer $id
@@ -64,13 +76,8 @@ class Usuario{
 
         if(count($result)>0)
         {
-            $row=$result[0];
-            $this->setIdusuario($row['idusuario']);
-            $this->setDeslogin($row['deslogin']);
-            $this->setDessenha($row['dessenha']);
-            $this->setDtcadastro(new DateTime($row['dtcadastro']));
+            $this->setData($result[0]);
         }
-
     }
     
     /**
@@ -100,7 +107,14 @@ class Usuario{
         return json_encode($result);
     }
 
-    public function login($login, $password)
+    /**
+     * Método responsável por validar o usuário e a senha
+     *
+     * @param string $login
+     * @param string $password
+     * @return void
+     */
+    public function login(string $login,string $password)
     {
         $sql= new SQL();
 
@@ -111,15 +125,58 @@ class Usuario{
 
         if(count($result)>0)
         {
-            $row=$result[0];
-            $this->setIdusuario($row['idusuario']);
-            $this->setDeslogin($row['deslogin']);
-            $this->setDessenha($row['dessenha']);
-            $this->setDtcadastro(new DateTime($row['dtcadastro']));
+            $this->setData($result[0]);
         }
         else{
             throw new Exception("Login e ou Senha invalidos !");
         }
+
+    }
+
+    /**
+     * Método responsavel por preencher os dados de retorno das buscas
+     *
+     * @param array $data
+     * @return void
+     */
+    public function setData(array $data)
+    {
+        $this->setIdusuario($data['idusuario']);
+        $this->setDeslogin($data['deslogin']);
+        $this->setDessenha($data['dessenha']);
+        $this->setDtcadastro(new DateTime($data['dtcadastro']));
+    }
+
+    /**
+     * Método responsável por inserir um novo usuário no
+     * banco e preencher os atributos id e data de cadastro do
+     * objeto usuário
+     * @return void
+     */
+    public function insert()
+    {
+        $sql= new SQL();
+        $result=$sql->select("CALL sp_usuarios_insert(:LOGIN, :PASSWORD)", array(
+            ":LOGIN"=>$this->getDeslogin(),
+            ":PASSWORD"=>$this->getDessenha()
+        ));
+        if(count($result)>0)
+        {
+            $this->setData($result[0]);
+        }
+    }
+
+    public function update($login, $password)
+    {
+        $this->setDeslogin($login);
+        $this->setDessenha($password);
+
+        $sql= new SQL();
+        $sql->query("Update tb_usuarios set deslogin = :LOGIN , dessenha= :PASSWORD where idusuario = :ID", array(
+            ":LOGIN"=>$this->getDeslogin(),
+            ":PASSWORD"=>$this->getDessenha(),
+            ":ID"=>$this->getIdusuario()
+        ));
 
     }
 
