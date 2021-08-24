@@ -3,3 +3,10 @@ Manipulando_Arquivos/uploads
 Manipulando_Arquivos/images
 Manipulando_Arquivos/Pasta_01
 Manipulando_Arquivos/Pasta_02
+Utilitarios/Gerando_boletos
+Utilitarios/Envio_email/config.php
+Utilitarios/Envio_email/vendor/
+Utilitarios/Envio_email/composer.lock
+Utilitarios/Templates_RainTPL/vendor/
+Utilitarios/Templates_RainTPL/config.php
+Utilitarios/Slim_framework/vendor/

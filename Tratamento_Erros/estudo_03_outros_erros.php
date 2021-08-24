@@ -1,6 +1,17 @@
 <?php
+//Não mostrar os "Error"
+error_reporting(E_ALL & ~E_ERROR);
 
-function TrataErro($code,$message,$file,$line)
+/**
+ * função Chamada quando ocorre erros
+ *
+ * @param string $code
+ * @param string $message
+ * @param string $file
+ * @param string $line
+ * @return string
+ */
+function trataErro($code,$message,$file,$line)
 {
     echo json_encode(array(
         "codigo"=>$code,
@@ -10,7 +21,9 @@ function TrataErro($code,$message,$file,$line)
     ));
 }
 
-//chamado quando erros tipo alertas e outros tipos de erro são chamados
+//Chamado quando erros tipo alertas e outros tipos de erro são chamados
 set_error_handler("TrataErro");
 
-echo 50/0;
+//Erro de variavel não existente
+echo $a;
+$nome=$_GET['nome'];

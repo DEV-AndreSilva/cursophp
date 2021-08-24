@@ -1,0 +1,16 @@
+{
+    "name": "andre.silva/projeto_composer",
+    "description": "Aula de PHP7",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Andre Luis",
+            "email": "andreluis2608@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require":
+     {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
