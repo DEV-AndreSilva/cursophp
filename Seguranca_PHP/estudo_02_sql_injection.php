@@ -4,6 +4,7 @@
 
 $id = (isset($_GET['id'])) ?$_GET["id"]:1;
 
+//Verificação de URL suspeita
 if(!is_numeric($id) || strlen($id)>5)
 {
     exit("Pegamos você");

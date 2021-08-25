@@ -18,5 +18,5 @@ if(!is_dir($pasta))
     echo "Diretório criado com sucesso";
 }
 
-//vendo as permissoes do arquivo
+//Vendo as permissoes do arquivo
 echo substr(sprintf("%o",fileperms($pasta)),-4);

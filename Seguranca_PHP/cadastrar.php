@@ -1,4 +1,6 @@
 <?php
+//Inclusão do arquivo com as constantes de chave do google reCAPTCHA
+require "config.php";
 
 if(isset($_POST['inputEmail']))
 {
@@ -9,7 +11,7 @@ if(isset($_POST['inputEmail']))
     curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);
     curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,0);
     curl_setopt($ch,CURLOPT_POSTFIELDS,http_build_query(array(
-        "secret"=>"6LdeIyAcAAAAACsg5Buwr3IGolfrThe5h8NHyoOB",
+        "secret"=>SECRETKEY,
         "response"=>$_POST["g-recaptcha-response"],
         "remoteip"=>$_SERVER["REMOTE_ADDR"]
             )

@@ -6,8 +6,8 @@
 <?php
 if(isset($_POST['busca']))
 {
-    //echo $_POST['busca'];
-    //Escapa a string como um texto, pode receber excecoes, remove as tags
-    echo strip_tags($_POST['busca'],"<strong><a>");
+    //Escapa a string como um texto, removendo as tags, possui execeção
+    echo strip_tags($_POST['busca']);
+    //Escapa a tag como string
     echo htmlentities($_POST['busca']);
 }
