@@ -8,7 +8,7 @@ require "config.php";
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
-    <form action="cadastrar.php" method="POST">
+    <form action="validarRecaptcha.php" method="POST">
     <input type="email" name="inputEmail">
       <div class="g-recaptcha" data-sitekey=<?=SITEKEY?>></div>
       <br/>
